@@ -1,0 +1,33 @@
+{
+  "name": "hal-api",
+  "version": "0.0.1",
+  "description": "Api for the HAL Rasp-pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattAndDev/hal-api.git"
+  },
+  "keywords": [
+    "raspberry-pi",
+    "express"
+  ],
+  "author": "Matteo Maronati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattAndDev/hal-api/issues"
+  },
+  "homepage": "https://github.com/MattAndDev/hal-api#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "glob": "^7.1.1",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
