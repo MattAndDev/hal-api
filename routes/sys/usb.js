@@ -13,6 +13,8 @@ module.exports = function (router, remove) {
   router.route(endpoint).get((req, res) => {
     res.header('Content-Type', 'application/json')
     let usbs = usb.getDeviceList()
-    res.send(JSON.stringify(usbs, null, 2))
+    let external = _.filter(usbs, (usb) => { return usb.deviceAddress > 3 })
+
+    res.send(JSON.stringify(external, null, 2))
   })
 }
