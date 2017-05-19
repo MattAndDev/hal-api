@@ -22,7 +22,7 @@ class Api {
     })
 
     this.api.listen(env.port, function () {
-      console.log('Example app listening on port 3000!')
+      console.log('HAL Api listening at localhost:3000')
     })
 
     this._buildRoutes()
