@@ -32,7 +32,6 @@ class Api {
     glob('./routes/**/*.js', (err, routes) => {
       if (!err) {
         _.each(routes, (route) => {
-          console.log(route)
           this.routes[route] = require(route)
           this.routes[route](this.router, 'routes')
         })

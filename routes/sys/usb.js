@@ -3,6 +3,7 @@ var path = require('path')
 var os = require('os')
 // libs
 var _ = require('lodash')
+var usb = require('usb')
 
 // sys/data
 // ============================================
@@ -11,10 +12,7 @@ module.exports = function (router, remove) {
   let endpoint = path.relative(process.cwd(), __filename).replace(remove, '').replace('.js', '')
   router.route(endpoint).get((req, res) => {
     res.header('Content-Type', 'application/json')
-    let data = {}
-    _.each(os, (property) => {
-      if (typeof property === 'function') data[property.name] = property()
-    })
-    res.send(JSON.stringify(data, null, 2))
+    let usbs = usb.getDeviceList()
+    res.send(JSON.stringify(usbs, null, 2))
   })
 }
