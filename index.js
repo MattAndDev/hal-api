@@ -18,7 +18,7 @@ class Api {
 
   init () {
     this.api.get('/', function (req, res) {
-      res.send('Hello World!')
+      res.send('HAL Rasp-pi api.')
     })
 
     this.api.listen(env.port, function () {
