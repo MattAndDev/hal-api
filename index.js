@@ -36,6 +36,9 @@ class Api {
           this.routes[route](this.router, 'routes')
         })
       }
+      else {
+        console.log(`Api._buildRoutes failed with error: \n ${err}`)
+      }
     })
   }
 }
