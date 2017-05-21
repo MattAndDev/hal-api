@@ -17,7 +17,7 @@ module.exports = function (router, remove) {
     res.header('Content-Type', 'image/jpg')
 
     PythonShell.run(
-      '/image.py',
+      '/python/image.py',
       {
         scriptPath: path.dirname(__filename),
         args: [env.tmpImage]
