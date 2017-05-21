@@ -8,7 +8,9 @@ sense = SenseHat()
 def main():
   # get temperature
   atmospheric = {
-    'localTemperature': sense.get_temperature()
+    'temperature': sense.get_temperature(),
+    'humidity': sense.get_humidity(),
+    'pressure': sense.get_pressure()
   }
   # atmospheric['temprature'] =
   json_data = json.dumps(atmospheric)
