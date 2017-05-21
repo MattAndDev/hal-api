@@ -15,7 +15,7 @@ module.exports = function (router, remove) {
     res.header('Content-Type', 'application/json')
 
     PythonShell.run(
-      '/write.py',
+      '/python/write.py',
       {
         scriptPath: path.dirname(__filename),
         args: [req.params.message]
