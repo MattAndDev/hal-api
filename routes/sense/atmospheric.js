@@ -19,8 +19,7 @@ module.exports = function (router, remove) {
       { scriptPath: path.dirname(__filename) },
       (err, results) => {
         if (err) throw err
-        console.log(__filename)
-        res.send(JSON.stringify(results, null, 2))
+        res.send(JSON.stringify(JSON.parse(results), null, 2))
       }
     )
   })
