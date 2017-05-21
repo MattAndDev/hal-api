@@ -15,7 +15,7 @@ module.exports = function (router, remove) {
     res.header('Content-Type', 'application/json')
 
     PythonShell.run(
-      '/atmospheric.py',
+      '/python/atmospheric.py',
       { scriptPath: path.dirname(__filename) },
       (err, results) => {
         if (err) throw err
