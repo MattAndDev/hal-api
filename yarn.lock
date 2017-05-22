@@ -1268,6 +1268,18 @@ raspicam@^0.2.13:
   dependencies:
     lodash "*"
 
+raspivid-stream@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/raspivid-stream/-/raspivid-stream-0.2.1.tgz#773ef1b0517268bd2bad5391fff431b3ea019e4f"
+  dependencies:
+    raspivid "^1.0.0"
+    stream-concat "^0.1.0"
+    stream-split "^1.1.0"
+
+raspivid@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/raspivid/-/raspivid-1.0.0.tgz#9f119beecbd5b103a50006af7371483a2ef6931f"
+
 rc@^1.1.7:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.1.tgz#2e03e8e42ee450b8cb3dce65be1bf8974e1dfd95"
@@ -1457,6 +1469,14 @@ sshpk@^1.7.0:
 "statuses@>= 1.3.1 < 2", statuses@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
+
+stream-concat@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/stream-concat/-/stream-concat-0.1.0.tgz#222ef164d073f99c136b9491bcb8ae2bb7577bbb"
+
+stream-split@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stream-split/-/stream-split-1.1.0.tgz#d9b5c5e0fa0991a4da95f96e91f5f151804d3d3c"
 
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
