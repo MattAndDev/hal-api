@@ -1,31 +1,37 @@
 // core
 var path = require('path')
-var os = require('os')
+var exec = require('child_process').exec
+var _ = require('lodash')
 // env
 var env = require('./../../.env')
-// libs
-var _ = require('lodash')
-var PythonShell = require('python-shell')
 
-// sense/write
+// camera/image
 // ============================================
 
 module.exports = function (router, remove) {
   let endpoint = path.relative(process.cwd(), __filename).replace(remove, '').replace('.js', '')
   router.route(endpoint).get((req, res) => {
-
-    res.header('Content-Type', 'image/jpg')
-
-    PythonShell.run(
-      '/python/image.py',
-      {
-        scriptPath: path.dirname(__filename),
-        args: [env.tmpImage]
-      },
-      (err) => {
-        if (err) throw err
+    let cmd = `raspistill -o ${env.tmpImage} `
+    let baseQuery = {
+      w: '800',
+      h: '600'
+    }
+    if (req.query) {
+      let customQuery = _.assignIn(baseQuery, req.query)
+      _.each(customQuery, (value, param) => {
+        cmd = cmd + ` -${param} ${value}`
+      })
+    }
+    exec(cmd, (err, stdout, stderr) => {
+      if (err || stderr) {
+        res.header('Content-Type', 'text/plain')
+        res.send(`${err} \n ${stderr}`)
+        throw err
+      }
+      else {
+        res.header('Content-Type', 'image/jpg')
         res.sendFile(env.tmpImage)
       }
-    )
+    })
   })
 }
