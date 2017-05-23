@@ -2,6 +2,14 @@
 
 ### WIP see [milestones](https://github.com/MattAndDev/hal-api/milestone/1)
 
+### Goal
+This project aims to provide an easy to set up http api to control and retrieve data from a raspberry pi.
+
+### Why
+- I just can't get some sleep.
+- You can have somebody sending you a led text message like this `https://rasp-pi.domain/sense/write/hi_matt` *how cool is that*!
+
+
 ## System requirements
 
 ### Core
