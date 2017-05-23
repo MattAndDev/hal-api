@@ -1,6 +1,6 @@
 # Hal api
 
-# WIP
+### WIP see [milestones](https://github.com/MattAndDev/hal-api/milestone/1)
 
 ## System requirements
 
@@ -13,6 +13,7 @@
 - `/sense/*`
   - hardware: [sense hat](https://www.raspberrypi.org/products/sense-hat/) (mounted and working, no checks)
   - sys: `sense-hat` [package](https://www.raspberrypi.org/documentation/hardware/sense-hat/) (python)
+
 
 ## Permission requirements
 **sudo**
