@@ -1,12 +1,12 @@
 // core
 var path = require('path')
-var exec = require('child_process').exec;
+var exec = require('child_process').exec
 // libs
 var _ = require('lodash')
 // utils
 var stdoutToJSon = require('../../utils/stdout-to-json')
 
-// sys/data
+// sys/storage
 // ============================================
 
 module.exports = function (router, remove) {
