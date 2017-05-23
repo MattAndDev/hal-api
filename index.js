@@ -1,10 +1,12 @@
 'use strict'
+// relative paths
+require('app-module-path').addPath(__dirname)
 // libs
 var Express = require('express')
 var glob = require('glob')
 var _ = require('lodash')
 // env
-var env = require('./.env')
+var env = require('.env')
 
 
 class Api {

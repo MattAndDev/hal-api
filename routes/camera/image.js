@@ -4,7 +4,7 @@ var exec = require('child_process').exec
 // libs
 var _ = require('lodash')
 // env
-var env = require('./../../.env')
+var env = require('.env')
 
 // camera/image
 // ============================================

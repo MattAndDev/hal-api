@@ -4,7 +4,7 @@ var exec = require('child_process').exec
 // libs
 var _ = require('lodash')
 // utils
-var stdoutToJSon = require('../../utils/stdout-to-json')
+var stdoutToJSon = require('utils/stdout-to-json')
 
 // sys/ssh
 // ============================================
