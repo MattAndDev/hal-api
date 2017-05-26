@@ -32,7 +32,6 @@ module.exports = function (router, remove) {
     // execute
     exec(cmd, (err, stdout, stderr) => {
       // if any type of error
-      console.log(stderr);
       if (err || stderr) {
         res.header('Content-Type', 'text/plain')
         res.send(`${err} \n ${stderr}`)
