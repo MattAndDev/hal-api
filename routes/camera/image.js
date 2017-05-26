@@ -3,6 +3,8 @@ var path = require('path')
 var exec = require('child_process').exec
 // libs
 var _ = require('lodash')
+// utils
+var queryToArgs = require('utils/query-to-cli-args')
 // env
 var env = require('.env')
 
@@ -19,15 +21,13 @@ module.exports = function (router, remove) {
       w: '800',
       h: '600'
     }
-    // if query
-    if (req.query) {
-      // merge with defaults
-      let customQuery = _.assignIn(baseQuery, req.query)
-      // extend the command
-      _.each(customQuery, (value, param) => {
-        cmd = cmd + ` -${param} ${value}`
-      })
-    }
+
+    // parse query params to args (if any, else pass only baseQuery)
+    let args = req.query ? queryToArgs(req.query, baseQuery) : queryToArgs(baseQuery)
+
+    // chain command and args
+    cmd = cmd + args
+
     // execute
     exec(cmd, (err, stdout, stderr) => {
       // if any type of error
