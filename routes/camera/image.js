@@ -5,6 +5,7 @@ var exec = require('child_process').exec
 var _ = require('lodash')
 // utils
 var queryToArgs = require('utils/query-to-cli-args')
+var wLog = require('utils/winston-logger')
 // env
 var env = require('.env')
 
@@ -31,10 +32,11 @@ module.exports = function (router, remove) {
     // execute
     exec(cmd, (err, stdout, stderr) => {
       // if any type of error
+      console.log(stderr);
       if (err || stderr) {
         res.header('Content-Type', 'text/plain')
         res.send(`${err} \n ${stderr}`)
-        throw err
+        wLog.log('error', `${endpoint} produced an error`, {err: err}, {stderr: stderr})
       }
       // everything fine, shipping image
       else {
