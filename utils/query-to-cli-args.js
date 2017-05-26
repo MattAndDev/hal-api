@@ -19,7 +19,8 @@ module.exports = function (query, baseQuery) {
   let args = ''
   // object to string
   _.each(query, (value, param) => {
-    args = args + ` -${param} ${value}`
+    // if param has Bang (!) interpet it as -- , else -
+    args = param.indexOf('!') >= 0 ? args + ` --${param.replace('!', '')} ${value}` : args + ` -${param} ${value}`
   })
   // ship it
   return args
