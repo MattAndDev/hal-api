@@ -23,7 +23,7 @@ module.exports = function (router, remove) {
     }
 
     // parse query params to args (if any, else pass only baseQuery)
-    let args = req.query ? queryToArgs(req.query, baseQuery) : queryToArgs(baseQuery)
+    let args = !_.isEmpty(req.query) ? queryToArgs(req.query, baseQuery) : queryToArgs(baseQuery)
 
     // chain command and args
     cmd = cmd + args
