@@ -15,7 +15,6 @@ module.exports = function (router, remove) {
   let endpoint = path.relative(process.cwd(), __filename).replace(remove, '').replace('.js', '')
   router.route(endpoint).get((req, res) => {
 
-
     PythonShell.run(
       '/python/atmospheric.py',
       { scriptPath: path.dirname(__filename) },
