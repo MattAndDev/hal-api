@@ -5,6 +5,8 @@ require('app-module-path').addPath(__dirname)
 var Express = require('express')
 var glob = require('glob')
 var _ = require('lodash')
+// utils
+var wLog = require('utils/winston-logger')
 // env
 var env = require('.env')
 
@@ -19,12 +21,14 @@ class Api {
   }
 
   init () {
+    wLog.log('debug', 'hal-api initalised')
+
     this.api.get('/', function (req, res) {
       res.send('HAL Rasp-pi api.')
     })
 
     this.api.listen(env.port, function () {
-      console.log('HAL Api listening at localhost:3000')
+      wLog.log('debug', `hal-api listening on port ${env.port}`)
     })
 
     this._buildRoutes()
@@ -39,7 +43,7 @@ class Api {
         })
       }
       else {
-        console.log(`Api._buildRoutes failed with error: \n ${err}`)
+        wLog.log('debug', 'Api._buildRoutes failed building routes', {err: err})
       }
     })
   }
