@@ -1,6 +1,3 @@
-// core
-var path = require('path')
-var exec = require('child_process').exec
 // libs
 var _ = require('lodash')
 
