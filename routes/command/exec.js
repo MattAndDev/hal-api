@@ -17,7 +17,21 @@ module.exports = function (router, remove) {
   router.route(endpoint + '/:command').get((req, res) => {
     // if no command, throw error
     if (!req.params.command) wLog.log('error', `${endpoint} requires a parameter :command, none passed`, {err: err})
+    // get commang
     let cmd = req.params.command
-    // if (!_.isEmpty(req.query)) let query = queryToArgs(req.query)
+    // parse query
+    let query = !_.isEmpty(req.query) ? queryToArgs(req.query) : ''
+    // execute and return
+    exec(cmd + query, (err, stdout, stderr) => {
+      if (err) {
+        res.header('Content-Type', 'text/plain')
+        res.send(`${err}`)
+        wLog.log('error', `${endpoint} produced an error`, {err: err})
+      }
+      else {
+        res.header('Content-Type', 'text/plain')
+        res.send(stdout)
+      }
+    })
   })
 }
