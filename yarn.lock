@@ -184,6 +184,10 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
 
+chai-arrays@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chai-arrays/-/chai-arrays-1.0.0.tgz#859cd466ce9192ad06945e4ca910549ecefcb975"
+
 chai@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/chai/-/chai-4.0.0.tgz#f6c989e45a5707d40c54d97ddd7ca89b30a6a06a"
