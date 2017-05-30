@@ -4,7 +4,8 @@
   "description": "Api for the HAL Rasp-pi",
   "main": "index.js",
   "scripts": {
-    "test": "test/index.js"
+    "test": "npm run test-unit",
+    "test-unit": "mocha test/index.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.2"
   }
 }
