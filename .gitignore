@@ -13,3 +13,6 @@ logs/
 
 # env
 test-env.js
+
+# coverage
+coverage/

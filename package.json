@@ -4,7 +4,8 @@
   "description": "Api for the HAL Rasp-pi",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/index.js"
+    "test": "mocha test/index.js",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --reporter dot test/"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
+    "babel-core": "^6.24.1",
     "chai": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
@@ -37,6 +39,7 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "1.0.0-alpha.2",
     "mocha": "^3.4.2",
     "sinon": "^2.3.2"
   }
