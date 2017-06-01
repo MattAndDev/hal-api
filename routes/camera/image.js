@@ -7,7 +7,10 @@ var _ = require('lodash')
 var queryToArgs = require('utils/query-to-cli-args')
 var wLog = require('utils/winston-logger')
 // env
-var env = require('.env')
+var env
+try { env = require('.env') }
+catch (ex) { env = require('.env.example') }
+
 
 // camera/image
 // ============================================

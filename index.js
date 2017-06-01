@@ -8,7 +8,10 @@ var _ = require('lodash')
 // utils
 var wLog = require('utils/winston-logger')
 // env
-var env = require('.env')
+var env
+try { env = require('.env') }
+catch (ex) { env = require('.env.example') }
+
 
 
 module.exports = class Api {

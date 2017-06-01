@@ -6,8 +6,6 @@ var _ = require('lodash')
 // utils
 var queryToArgs = require('utils/query-to-cli-args')
 var wLog = require('utils/winston-logger')
-// env
-var env = require('.env')
 
 // camera/image
 // ============================================
