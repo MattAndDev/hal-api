@@ -6,7 +6,8 @@ node_modules
 
 # Logs
 npm-debug.log
-logs/
+logs/*
+!logs/.gitkeep
 
 # OS
 .DS_Store
