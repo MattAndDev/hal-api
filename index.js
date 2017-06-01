@@ -39,6 +39,15 @@ module.exports = class Api {
     })
   }
 
+
+  // _buildRoutes
+  // ============================================
+  // uses glob to dinamically create routes based on glob array result
+  //
+  // @params
+  // routes -> array
+  // cb -> function
+
   _buildRoutes (routes, cb) {
     glob(routes, (err, routes) => {
       if (!err) {
