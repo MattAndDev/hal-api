@@ -2,5 +2,20 @@ language: node_js
 node_js:
   - "6"
 before_install:
+  - npm install -g npm@latest
   - sudo apt-get -qq update
   - sudo apt-get install -y build-essential libudev-dev
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+      - xvfb
+install:
+  - export CXX="g++-4.8"
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - npm install
+env:
+  - CXX=g++-4.8
